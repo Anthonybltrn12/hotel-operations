@@ -48,7 +48,9 @@ public class Reservation {
     }
     public double getReservationTotal(){
         double total = 0; //add weekend discount
-        total = getPrice() * getNumOfNights();
+        if(isWeekend == true){
+            total = (getNumOfNights() * getPrice()) + (getPrice() * .1);
+        }
         return total;
     }
 }
