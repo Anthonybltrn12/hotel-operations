@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 public class Employee {
 
     private int employeeId;
@@ -8,6 +11,7 @@ public class Employee {
     private double payRate;
     private int hoursWorked;
     private int startTime;
+    private int clockInTime;
 
 
     public Employee(int employeeId, String name, String department, double payRate, int hoursWorked) {
@@ -89,5 +93,14 @@ public class Employee {
     public void punchOut(int time){
 
         this.hoursWorked += time - this.startTime;
+    }
+    public void punchIn(){
+        LocalTime time = LocalTime.now();
+        punchIn(time.getHour());
+    }
+    public void punchOut(){
+        LocalTime endTime = LocalTime.now();
+        int endHour = endTime.getHour();
+        punchOut(endHour);
     }
 }
