@@ -57,25 +57,25 @@ public class Employee {
     }
     public double getTotalPay(){
         double totalPay = 0;
-        if(getHoursWorked() > 40){
-            totalPay = (getRegularHours() * getPayRate()) + (getOverTimeHours() * (getPayRate() * 1.5));
+        if(this.hoursWorked > 40){
+            totalPay = (this.getRegularHours() * this.payRate) + (this.getOverTimeHours() * (this.payRate * 1.5));
         }else{
-            totalPay = getRegularHours() * getPayRate();
+            totalPay = this.getRegularHours() * this.payRate;
         }
         return totalPay;
     }
     public int getRegularHours(){
 
-        if(getHoursWorked() <= 40){
-           return getHoursWorked();
+        if(this.hoursWorked <= 40){
+           return this.hoursWorked;
         }
         return 40;
 
     }
     public int getOverTimeHours(){
         int overTime = 0;
-        if(getHoursWorked() > 40){
-            overTime = getHoursWorked() - 40;
+        if(this.hoursWorked > 40){
+            overTime = this.hoursWorked - 40;
         }
         return overTime;
     }
