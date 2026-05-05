@@ -20,7 +20,7 @@ public class Reservation {
     }
     public double getPrice(){
         double roomRate = 0;
-        switch (roomType){
+        switch (this.roomType){
             case "king":
                 roomRate = 139.00;
                 break;
@@ -47,9 +47,9 @@ public class Reservation {
         isWeekend = weekend;
     }
     public double getReservationTotal(){
-        double total = 0; //add weekend discount
-        if(isWeekend == true){
-            total = (getNumOfNights() * getPrice()) + (getPrice() * .1);
+        double total = (this.getNumOfNights() * this.getPrice());
+        if(this.isWeekend()){
+            total = (this.getNumOfNights() * this.getPrice()) + (this.getPrice() * .1);
         }
         return total;
     }
