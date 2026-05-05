@@ -49,5 +49,8 @@ public class Hotel {
         return this.numberOfRooms - this.bookedRooms;
 
     }
+    public int getAvailableSuites(){
+        return this.numberOfSuites - this.bookedSuites;
+    }
 
 }
