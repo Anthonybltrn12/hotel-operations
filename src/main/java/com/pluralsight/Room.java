@@ -38,7 +38,7 @@ public class Room {
     }
 
     public void checkedIn(){
-       if(getIsAvailable()) {
+       if(this.getIsAvailable()) {
            this.isDirty = true;
            this.isOccupied = true;
            System.out.println("You are checked in!");
